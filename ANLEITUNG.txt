@@ -1,0 +1,18 @@
+AFTER DARK 0.4 – Installierbare Web-App für Kevin & Lea
+
+WICHTIG: Diese ZIP ist keine APK. Die Installation als App erfordert HTTPS.
+
+EINFACHER WEG NUR MIT SAMSUNG (GitHub Pages):
+1. ZIP entpacken. Darin sind index.html, manifest.webmanifest, sw.js, icon-192.png, icon-512.png.
+2. Auf github.com ein Konto anlegen bzw. anmelden, ein neues Repository erstellen.
+3. Dateien aus dem entpackten Ordner ins Repository hochladen (Add file > Upload files).
+4. Settings > Pages > Build and deployment > Deploy from a branch > main / (root) > Save.
+5. Die angezeigte https://...github.io/... Adresse in Chrome öffnen.
+6. Chrome-Menü (drei Punkte) > Zum Startbildschirm hinzufügen > Installieren (falls angeboten).
+7. Einmal bei Internetverbindung laden, dann sollte die App auch offline starten.
+
+PRIVATSPHÄRE: GitHub Pages ist öffentlich erreichbar, auch wenn das Repository privat sein sollte. Nur den App-Code ohne eure privaten Karten hochladen! Selbst erstellte Karten bleiben lokal auf dem Gerät. Keine persönlichen Fotos oder privaten Inhalte in die hochgeladenen Dateien einbauen.
+
+HINWEIS: Die im Browser über file:// gespeicherten Karten werden NICHT automatisch in die installierte Version übertragen. Vorher sichern oder in der neuen Version neu anlegen. Browserdaten löschen kann gespeicherte Karten löschen.
+
+EINE ECHTE APK: Erfordert später einen Android-Build bzw. einen geeigneten Build-Dienst. Diese ZIP ist dafür eine Ausgangsbasis, aber keine APK.
