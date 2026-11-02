@@ -1,0 +1,259 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#160912"><title>AFTER DARK · Kevin & Lea</title><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png" type="image/png"><style>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#f8e9e2;background:#10080e}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#521b32 0%,#1d0c18 42%,#10080e 88%);min-height:100vh}main{max-width:520px;margin:auto;padding:26px 18px 60px;text-align:center}h1{font-family:Georgia,serif;color:#e8bc7b;font-size:clamp(34px,9vw,47px);letter-spacing:5px;margin:7px 0}.eyebrow{font-size:10px;letter-spacing:3px;color:#c79aa4}button{cursor:pointer;border:0;border-radius:12px;background:#9e2d50;color:#fff;padding:14px 12px;font-size:14px;font-weight:750}button.gold{background:linear-gradient(120deg,#edc88f,#b9874d);color:#25111b}button.secondary{background:#30202a;border:1px solid #76505c;color:#f8e9e2}button:disabled{opacity:.5;cursor:not-allowed}.controls{display:grid;grid-template-columns:1fr 1fr;gap:9px}.wide{grid-column:1/-1}.flip-stage{perspective:1100px;margin:23px auto 15px;max-width:370px;height:345px}.flip-card{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .72s cubic-bezier(.2,.7,.2,1)}.flip-card.flipped{transform:rotateY(180deg)}.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:23px;border:1px solid #b78a5d;background:linear-gradient(145deg,#5d1c34,#1a0a16 78%);box-shadow:0 22px 50px #0009,inset 0 0 0 6px #ffffff08;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:27px;gap:17px}.back{transform:rotateY(180deg)}.symbol{font-family:Georgia,serif;font-size:64px;color:#e6b87d}.category{color:#eac38b;font-size:11px;letter-spacing:3px;text-transform:uppercase}.challenge{font:24px/1.4 Georgia,serif;overflow-wrap:anywhere}.meta{color:#d7b2b8;font-size:12px}.clock{font-size:44px;font-variant-numeric:tabular-nums;font-weight:650;color:#f1d3a5;margin:12px 0 5px}.track{height:6px;border-radius:10px;background:#442b36;overflow:hidden;margin:8px 5px 17px}.fill{height:100%;width:100%;background:linear-gradient(90deg,#a42f54,#e5bb7c);transition:width .25s}.status{color:#caa9b0;font-size:12px;margin:13px 0}section{border-top:1px solid #583343;text-align:left;margin-top:27px;padding-top:17px}h2{font:25px Georgia,serif;color:#e6bd84}label{display:block;font-size:12px;color:#d4adb5;margin:12px 0 5px}input,textarea,select{width:100%;background:#281621;color:#fff;border:1px solid #805261;border-radius:10px;padding:12px;font:inherit}textarea{min-height:92px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.small{font-size:12px;line-height:1.6;color:#c9aeb5}.chips{display:flex;gap:7px;flex-wrap:wrap}.chip{background:#30202a;border:1px solid #735160;font-size:12px;padding:9px 12px}.chip.active{background:#9d3152;border-color:#e1ac8b}.inline{display:flex;gap:8px;align-items:center}.inline input{width:auto}.toast{min-height:20px;font-size:12px;color:#eac38b;margin-top:12px}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #efc68e;outline-offset:3px}@media(prefers-reduced-motion:reduce){.flip-card{transition:none}}
+
+.intro{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 25%,#5b1832,#130810 70%);padding:22px;transition:opacity .5s,visibility .5s}.intro.hidden{opacity:0;visibility:hidden;pointer-events:none}.intro-inner{width:min(100%,430px);text-align:center;border:1px solid #a67956;border-radius:28px;padding:40px 24px;background:linear-gradient(145deg,#391324,#180b15);box-shadow:0 20px 70px #0009}.rose{font-size:76px;display:block;animation:float 3.5s ease-in-out infinite;filter:drop-shadow(0 0 20px #ab325b77)}@keyframes float{50%{transform:translateY(-10px)}}.intro h2{font-size:clamp(36px,11vw,55px);letter-spacing:4px;margin:12px 0}.intro .tag{font:italic 22px/1.5 Georgia,serif;color:#efccad;margin:20px 0 28px}.intro button{width:100%;font-size:16px;padding:17px}.count{color:#e9bd86;font-size:13px;margin:9px}.help{border:1px solid #654451;border-radius:13px;padding:12px;margin-top:12px}.privacy{font-size:11px;color:#b99ca5;margin-top:17px}
+</style><style>
+/* AFTER DARK 0.8: physical-card styling; previous data storage untouched */
+.flip-stage{max-width:305px;height:425px;perspective:1400px;margin:24px auto 18px;cursor:pointer}
+.flip-card{transition:transform .9s cubic-bezier(.18,.72,.16,1)}
+.flip-card:focus-visible{outline:2px solid #eac28b;outline-offset:7px;border-radius:22px}
+.flip-card .face{border:2px solid #d9ad75;border-radius:19px;box-shadow:0 20px 48px #000a,inset 0 0 0 7px #2a101f,inset 0 0 0 9px #98673f;padding:28px 25px}
+.flip-card .front{background:radial-gradient(ellipse at 50% 35%,#63233b 0%,#2a0f20 65%,#150911 100%);gap:13px}
+.flip-card .back{background:radial-gradient(ellipse at 50% 20%,#56223a,#1a0a15 80%);gap:19px}
+.royal-corners{position:absolute;top:25px;left:30px;right:30px;display:flex;justify-content:space-between;color:#e8bb7d;font-size:22px}
+.royal-rose{font-size:76px;filter:drop-shadow(0 0 13px #d65d7155)}
+.royal-title{font:35px/1.1 Georgia,serif;letter-spacing:4px;color:#f2ca91;text-shadow:0 2px 12px #0007}
+.royal-sign{font-size:10px;letter-spacing:3px;color:#dfad8d}
+.royal-hint{position:absolute;bottom:37px;color:#e7c394;font-size:10px;letter-spacing:2px}
+.flip-card .challenge{font-size:clamp(19px,5vw,24px);max-height:265px;overflow:auto}
+@media(prefers-reduced-motion:reduce){.flip-card{transition:none}}
+</style><style>
+/* AFTER DARK 0.8 Royal Deck: purely visual, existing storage keys untouched */
+.flip-stage{width:min(78vw,300px);max-width:300px;height:auto;aspect-ratio:5/7;perspective:1600px;position:relative;isolation:isolate}
+.flip-stage::before,.flip-stage::after{content:"";position:absolute;inset:7px -6px -7px 6px;border:1px solid #986743;border-radius:18px;background:#190914;z-index:-1;transform:rotate(2.5deg);box-shadow:0 15px 28px #0006}
+.flip-stage::after{inset:4px -3px -4px 3px;transform:rotate(-1.5deg)}
+.flip-card{transition:transform .95s cubic-bezier(.19,.8,.18,1);will-change:transform}
+.flip-card .face{overflow:hidden;border:2px solid #e3bb7c;border-radius:17px;box-shadow:0 18px 44px #000a,inset 0 0 0 5px #170912,inset 0 0 0 7px #c79b63,inset 0 0 0 12px #260e1b;padding:27px 22px}
+.flip-card .front{background:radial-gradient(ellipse at center,#4c172e 0%,#220b19 65%,#12060e 100%)}
+.flip-card .front::before{content:"";position:absolute;inset:18px;border:1px solid #b88756;border-radius:100px 100px 10px 10px;opacity:.75;pointer-events:none}
+.flip-card .front::after{content:"❧";position:absolute;bottom:49px;font:35px Georgia,serif;color:#b88a59;opacity:.85}
+.royal-corners{top:24px;left:29px;right:29px;font-size:19px}
+.royal-emblem{width:158px;height:158px;max-width:70%;border:2px solid #d2a56d;outline:1px solid #8d5d40;outline-offset:7px;transform:rotate(45deg);border-radius:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;color:#e5b67b;box-shadow:0 0 30px #bd34572e,inset 0 0 22px #d99b6722;margin-bottom:9px}
+.royal-emblem span{display:block;transform:rotate(-45deg)}.emblem-top,.emblem-bottom{font-size:20px}.emblem-rose{font-size:67px;line-height:1;color:#c85d73;text-shadow:0 0 15px #ed8e7e80}
+.royal-title{font-size:30px;line-height:1.05;letter-spacing:4px;margin-top:5px}.royal-sign{font-size:9px}.royal-hint{bottom:23px;letter-spacing:1px;font-size:9px}
+.flip-card .back{background:radial-gradient(ellipse at 50% 30%,#53213a,#240d1b 72%,#13070f);padding:45px 30px}
+.flip-card .back::before{content:"";position:absolute;inset:16px;border:1px solid #ab7952;border-radius:12px;pointer-events:none}
+.corner{position:absolute;color:#e8c28c;font:16px/1 Georgia,serif;text-align:center;z-index:1}.corner-tl{top:24px;left:23px}.corner-br{bottom:24px;right:23px;transform:rotate(180deg)}
+.card-content{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:17px;width:100%;max-height:100%;overflow:auto;scrollbar-width:thin}
+.card-flourish{color:#d3a46b;font:22px Georgia,serif;letter-spacing:5px}.flip-card .challenge{font-size:clamp(18px,5vw,23px);line-height:1.42;max-height:230px;overflow:auto}.flip-card .category{font-size:10px;letter-spacing:2px}.flip-card .meta{color:#edc994}
+@media(prefers-reduced-motion:reduce){.flip-card{transition:none}}
+</style><style>
+/* v0.9 Royal Rose: only card artwork changes; original game logic and storage preserved. */
+.flip-card .front{background:#10090d url('./royal-rose-card.webp') center center / 100% 100% no-repeat!important;padding:0!important;box-shadow:0 20px 45px #000b,0 0 0 2px #c99a57!important}
+.flip-card .front::before,.flip-card .front::after{display:none!important}
+.flip-card .front>.royal-corners,.flip-card .front>.royal-emblem,.flip-card .front>.royal-title,.flip-card .front>.royal-sign{display:none!important}
+.flip-card .front>.royal-hint{bottom:11px;left:12px;right:12px;background:#180b15e8;border:1px solid #9b724e;border-radius:7px;padding:7px 4px;color:#f5d6a0;text-shadow:0 1px 3px #000;font-size:9px}
+@media(prefers-reduced-motion:reduce){.flip-card{transition:none!important}}
+</style><style>
+/* AFTER DARK 1.1 Royal Romance: cosmetic changes only; storage and game logic unchanged. */
+.intro{background:radial-gradient(ellipse at 50% 35%,#5a1931 0%,#190a14 63%,#0b050a 100%)}
+.intro-inner{position:relative;overflow:hidden;border:2px solid #d6a96b;border-radius:24px;background:radial-gradient(ellipse at 50% 12%,#47172b,#1a0b14 76%);box-shadow:0 25px 75px #000b,inset 0 0 0 5px #1a0a13,inset 0 0 0 7px #91643f;padding:29px 25px 34px}
+.intro-inner::before{content:'❦';position:absolute;left:17px;top:12px;color:#bd8b53;font:30px Georgia,serif;opacity:.9}
+.intro-inner::after{content:'❦';position:absolute;right:17px;bottom:12px;color:#bd8b53;font:30px Georgia,serif;transform:rotate(180deg);opacity:.9}
+.intro-rose-frame{width:160px;height:160px;margin:0 auto 17px;border-radius:50%;border:1px solid #a87c4f;box-shadow:0 0 30px #c52e5044,inset 0 0 18px #000;overflow:hidden;background:#17070f}
+.intro-rose-art{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.intro .eyebrow{color:#d4b4ad;font-size:10px;letter-spacing:2.5px}
+.intro h2{border:0;color:#efc58c;text-shadow:0 3px 18px #0009;font-size:clamp(35px,10vw,52px);line-height:1.06;margin:14px 0 9px}
+.intro-ornament{font:18px Georgia,serif;color:#b98b5a;letter-spacing:5px}
+.intro .tag{font-size:clamp(19px,5vw,22px);margin:16px 0 25px}
+.intro .gold{background:linear-gradient(115deg,#f1cc90,#c28f51);box-shadow:0 6px 18px #0007}
+.flip-card .back{background:radial-gradient(ellipse at 50% 40%,#3c1528 0%,#1a0a13 80%)!important;border-color:#d9aa71!important;box-shadow:0 20px 45px #000b,inset 0 0 0 5px #150911,inset 0 0 0 8px #9f7045!important}
+.flip-card .back::before{inset:14px;border:1px solid #bb8855;border-radius:12px;opacity:.9}
+.flip-card .back::after{content:'';position:absolute;inset:23px;border:1px solid #6f3b44;border-radius:9px;pointer-events:none}
+.front-ornament{position:absolute;left:0;right:0;color:#e5b57b;letter-spacing:7px;font:20px Georgia,serif;text-shadow:0 0 8px #b33b5866;pointer-events:none}
+.front-ornament.top{top:24px}.front-ornament.bottom{bottom:25px;transform:rotate(180deg)}
+.flip-card .back .card-content{z-index:2;position:relative;padding:30px 4px;gap:12px;overflow-y:auto;max-height:100%}
+.flip-card .back .card-flourish{color:#d7a36b}
+.flip-card .back .category{font-size:10px;letter-spacing:2px;color:#e5ba83}
+.flip-card .back .challenge{color:#fff0df;font-size:clamp(18px,4.9vw,23px);line-height:1.38;max-height:240px;overflow-y:auto;text-shadow:0 2px 8px #0008}
+.flip-card .back .meta{color:#e8bc82}
+@media(max-width:360px){.intro-inner{padding:25px 18px}.intro-rose-frame{width:135px;height:135px}}
+@media(prefers-reduced-motion:reduce){.intro-rose-art{animation:none}}
+/* v1.2: keep challenge within card without nested scrollbars */
+.flip-card .back .card-content{overflow:hidden!important;gap:10px!important;padding:28px 7px!important}
+.flip-card .back .challenge{overflow:hidden!important;max-height:none!important;font-size:clamp(18px,4.5vw,22px)!important;line-height:1.35!important}
+.flip-card .back .category{font-size:10px!important;letter-spacing:1.3px!important}
+</style></head><body><div class="intro" id="intro"><div class="intro-inner"><div class="intro-rose-frame" aria-hidden="true"><img class="intro-rose-art" src="royal-rose-intro.webp" alt=""></div><div class="eyebrow">PRIVATE EDITION · NUR FÜR ZWEI</div><h2>AFTER DARK</h2><div class="intro-ornament" aria-hidden="true">❦ ✧ ♥ ✧ ❦</div><div class="tag">Nur für Kevin &amp; Lea.<br>Hier gelten eure Regeln.</div><button class="gold" id="enter">✦ Unsere Nacht beginnt</button><div class="privacy">Privat · Offline · Jederzeit überspringbar</div></div></div><main><div class="eyebrow">KEVIN & LEA · PRIVATE EDITION · V1.3</div><h1>AFTER DARK</h1><div class="eyebrow">NUR FÜR KEVIN &amp; LEA ♡</div><div class="count">Eine Karte. Ein Moment. Eure Entscheidung.</div><div class="flip-stage"><div class="flip-card" id="flip" role="button" tabindex="0" aria-label="Karte antippen, um die Herausforderung aufzudecken"><div class="face front"><div class="royal-corners"><span>♠</span><span>♠</span></div><div class="royal-emblem" aria-hidden="true"><span class="emblem-top">❦</span><span class="emblem-rose">✿</span><span class="emblem-bottom">❦</span></div><div class="royal-title">AFTER<br>DARK</div><div class="royal-sign">KEVIN &amp; LEA</div><div class="royal-hint" id="royal-hint">✦ ZIEHT EURE ERSTE KARTE ✦</div></div><div class="face back" aria-live="polite"><div class="front-ornament top" aria-hidden="true">❧ ◆ ❧</div><div class="front-ornament bottom" aria-hidden="true">❧ ◆ ❧</div><span class="corner corner-tl">A<br>♥</span><span class="corner corner-br">A<br>♥</span><div class="card-content"><div class="card-flourish">❦ ✧ ❦</div><div class="category" id="category"></div><div class="challenge" id="challenge"></div><div class="meta" id="meta"></div><div class="card-flourish">✧</div></div></div></div></div><div class="clock" id="clock" role="timer">01:00</div><div class="track"><div class="fill" id="fill"></div></div><div class="controls"><button class="gold" id="draw">✦ Karte ziehen</button><button id="start">▶ Timer starten</button><button class="secondary" id="skip">↷ Überspringen</button><button class="secondary" id="reset">↺ Zurücksetzen</button></div><div class="status" id="status"></div><div class="toast" id="toast" aria-live="polite"></div>
+<section><h2>Spiel einstellen</h2><div class="row"><div><label for="name1">Spieler 1</label><input id="name1" maxlength="25" value="Kevin"></div><div><label for="name2">Spieler 2</label><input id="name2" maxlength="25" value="Lea"></div></div><label>Intensität</label><div class="chips" id="levels"><button class="chip" data-level="1">♡ Hot</button><button class="chip" data-level="2">♥ Very Hot</button><button class="chip active" data-level="3">🔥 Extreme</button><button class="chip" data-level="4">✦ Steigend</button></div><p class="small">Bei „Steigend“ werden nach jeweils vier gezogenen Karten weitere Intensitätsstufen freigeschaltet. Alle Aufgaben bleiben freiwillig.</p><label class="inline"><input type="checkbox" id="sound"> Soundeffekte einschalten</label><label class="inline"><input type="checkbox" id="special" checked> Joker und Überraschungskarten erlauben</label></section>
+<section><h2>Eigene Karten</h2><label for="newText">Herausforderung</label><textarea id="newText" maxlength="350" placeholder="Eure ganz persönliche Herausforderung ..."></textarea><div class="row"><div><label for="newTarget">Für wen?</label><select id="newTarget"><option value="random">Zufälliger Spieler</option><option value="both">Gemeinsam</option><option value="p1">Spieler 1</option><option value="p2">Spieler 2</option></select></div><div><label for="newDuration">Dauer</label><select id="newDuration"><option value="30">30 Sekunden</option><option value="60" selected>1 Minute</option><option value="120">2 Minuten</option><option value="180">3 Minuten</option><option value="300">5 Minuten</option><option value="600">10 Minuten</option></select></div></div><div class="row"><div><label for="newCategory">Kartentyp</label><select id="newCategory"><option>Verführung</option><option>Mutprobe</option><option>Geheimnis</option><option>Wunschkarte</option><option>Joker</option></select></div><div><label for="newLevel">Intensität</label><select id="newLevel"><option value="1">Hot</option><option value="2">Very Hot</option><option value="3" selected>Extreme</option></select></div></div><button id="add" style="width:100%;margin-top:15px">+ Eigene Karte speichern</button><p class="small" id="saved"></p><button class="secondary" id="clear" style="width:100%">Alle eigenen Karten löschen</button></section><section><h2>Eure Regeln ♡</h2><p class="small">Nur für Erwachsene. Jede Aufgabe erfordert gegenseitiges Einverständnis. Ihr könnt jederzeit Nein sagen, eine Karte überspringen oder das Spiel beenden. Klärt eure Grenzen vor dem Spielen. Eigene Karten und Namen werden nur lokal in diesem Browser gespeichert. Keine Anmeldung, keine Übertragung an einen Server.</p></section></main><script>
+const base=[
+["Verführung","Halte ihre Hand und schenke ihr einen langen Kuss.",60,"random",1],
+["Nähe","Umarmt euch eine Minute ohne Ablenkung.",60,"both",1],
+["Verführung","Küsse sanft Stirn, Wange und Lippen.",60,"random",1],
+["Nähe","Lehnt euch aneinander und atmet gemeinsam ruhig.",60,"both",1],
+["Berührung","Massiere ihre Hände mit langsamen Bewegungen.",120,"random",1],
+["Verführung","Flüstere einen Wunsch für euren Abend ins Ohr.",45,"random",1],
+["Berührung","Streiche sanft über den Rücken deines Gegenübers.",90,"random",1],
+["Nähe","Legt euch nebeneinander und kuschelt.",120,"both",1],
+["Verführung","Schenke deinem Gegenüber einen Kuss nach Wahl.",60,"random",1],
+["Berührung","Massiert euch abwechselnd die Schultern.",120,"both",1],
+["Verführung","Küsst euch langsam und ohne Eile.",120,"both",2],
+["Berührung","Lass dir eine angenehme Rückenmassage schenken.",180,"random",2],
+["Verführung","Küsse den Hals, wenn dein Gegenüber das mag.",60,"random",2],
+["Machtwechsel","Eine Person bestimmt die nächsten drei Küsse.",90,"random",2],
+["Wunschkarte","Wünsche dir eine Art von Zärtlichkeit.",120,"random",2],
+["Verführung","Tanzt eng zusammen zu einem langsamen Lied.",180,"both",2],
+["Berührung","Streiche sanft über Arme und Schultern.",90,"random",2],
+["Nähe","Kuschelt euch unter eine gemeinsame Decke.",180,"both",2],
+["Verführung","Ziehe dein Gegenüber für einen Kuss zu dir.",60,"random",2],
+["Machtwechsel","Tauscht nach einer Minute die Führung beim Küssen.",120,"both",2],
+["Verführung","Nimm dir zwei Minuten nur fürs Küssen.",120,"random",3],
+["Berührung","Schenke eine langsame Massage nach Wunsch.",180,"random",3],
+["Machtwechsel","Eine Person führt, die andere bestimmt die Grenzen.",120,"random",3],
+["Wunschkarte","Wählt eine neue Zärtlichkeit, die ihr beide mögt.",120,"both",3],
+["Fantasien","Verratet je eine intime Idee für ein anderes Mal.",90,"both",3],
+["Verführung","Küsst euch und wechselt nach einer Minute die Führung.",120,"both",3],
+["Nähe","Sucht euch einen ruhigen Platz zum engen Kuscheln.",180,"both",3],
+["Machtwechsel","Lass dein Gegenüber die nächste Zärtlichkeit wählen.",90,"random",3],
+["Überraschung","Augen schließen: ein vereinbarter Kuss als Überraschung.",60,"random",3],
+["Wunschkarte","Schenkt euch gegenseitig eine gewünschte Berührung.",120,"both",3],
+["Verführung","Schenke deinem Gegenüber drei langsame Küsse.",60,"random",1],
+["Berührung","Massiere die Hände für zwei Minuten.",120,"random",1],
+["Nähe","Kuschelt ganz eng für drei Minuten.",180,"both",1],
+["Wunschkarte","Lass dein Gegenüber einen Kuss auswählen.",90,"random",1],
+["Verführung","Schenke deinem Gegenüber vier langsame Küsse.",60,"random",1],
+["Berührung","Massiere die Schultern für zwei Minuten.",120,"random",1],
+["Nähe","Kuschelt ohne zu sprechen für drei Minuten.",180,"both",1],
+["Wunschkarte","Lass dein Gegenüber eine Massage auswählen.",90,"random",1],
+["Verführung","Schenke deinem Gegenüber fünf langsame Küsse.",60,"random",1],
+["Berührung","Massiere den Rücken für zwei Minuten.",120,"random",1],
+["Nähe","Kuschelt mit geschlossenen Augen für drei Minuten.",180,"both",1],
+["Wunschkarte","Lass dein Gegenüber eine Umarmung auswählen.",90,"random",1],
+["Verführung","Schenke deinem Gegenüber sechs langsame Küsse.",60,"random",1],
+["Berührung","Massiere die Arme für zwei Minuten.",120,"random",1],
+["Nähe","Kuschelt bei gedämpftem Licht für drei Minuten.",180,"both",1],
+["Wunschkarte","Lass dein Gegenüber einen langsamen Tanz auswählen.",90,"random",1],
+["Verführung","Schenke deinem Gegenüber sieben langsame Küsse.",60,"random",1],
+["Berührung","Massiere den Nacken für zwei Minuten.",120,"random",1],
+["Nähe","Kuschelt unter einer Decke für drei Minuten.",180,"both",1],
+["Wunschkarte","Lass dein Gegenüber eine Zärtlichkeit auswählen.",90,"random",1],
+["Verführung","Schenke deinem Gegenüber acht langsame Küsse.",60,"random",1],
+["Berührung","Massiere die Handflächen für zwei Minuten.",120,"random",1],
+["Nähe","Kuschelt während leise Musik läuft für drei Minuten.",180,"both",1],
+["Wunschkarte","Lass dein Gegenüber einen gemeinsamen Moment auswählen.",90,"random",1],
+["Verführung","Schenke deinem Gegenüber drei langsame Küsse.",60,"random",2],
+["Berührung","Massiere die Hände für zwei Minuten.",120,"random",2],
+["Nähe","Kuschelt ganz eng für drei Minuten.",180,"both",2],
+["Wunschkarte","Lass dein Gegenüber einen Kuss auswählen.",90,"random",2],
+["Machtwechsel","Wechselt die Führung beim Küssen.",120,"both",2],
+["Verführung","Schenke deinem Gegenüber vier langsame Küsse.",60,"random",2],
+["Berührung","Massiere die Schultern für zwei Minuten.",120,"random",2],
+["Nähe","Kuschelt ohne zu sprechen für drei Minuten.",180,"both",2],
+["Wunschkarte","Lass dein Gegenüber eine Massage auswählen.",90,"random",2],
+["Machtwechsel","Wechselt die Führung beim Tanzen.",120,"both",2],
+["Verführung","Schenke deinem Gegenüber fünf langsame Küsse.",60,"random",2],
+["Berührung","Massiere den Rücken für zwei Minuten.",120,"random",2],
+["Nähe","Kuschelt mit geschlossenen Augen für drei Minuten.",180,"both",2],
+["Wunschkarte","Lass dein Gegenüber eine Umarmung auswählen.",90,"random",2],
+["Machtwechsel","Wechselt die Führung beim Massieren.",120,"both",2],
+["Verführung","Schenke deinem Gegenüber sechs langsame Küsse.",60,"random",2],
+["Berührung","Massiere die Arme für zwei Minuten.",120,"random",2],
+["Nähe","Kuschelt bei gedämpftem Licht für drei Minuten.",180,"both",2],
+["Wunschkarte","Lass dein Gegenüber einen langsamen Tanz auswählen.",90,"random",2],
+["Machtwechsel","Wechselt die Führung beim Kuscheln.",120,"both",2],
+["Verführung","Schenke deinem Gegenüber sieben langsame Küsse.",60,"random",2],
+["Berührung","Massiere den Nacken für zwei Minuten.",120,"random",2],
+["Nähe","Kuschelt unter einer Decke für drei Minuten.",180,"both",2],
+["Wunschkarte","Lass dein Gegenüber eine Zärtlichkeit auswählen.",90,"random",2],
+["Machtwechsel","Wechselt die Führung beim Flüstern.",120,"both",2],
+["Verführung","Schenke deinem Gegenüber acht langsame Küsse.",60,"random",2],
+["Berührung","Massiere die Handflächen für zwei Minuten.",120,"random",2],
+["Nähe","Kuschelt während leise Musik läuft für drei Minuten.",180,"both",2],
+["Wunschkarte","Lass dein Gegenüber einen gemeinsamen Moment auswählen.",90,"random",2],
+["Machtwechsel","Wechselt die Führung beim Umarmen.",120,"both",2],
+["Verführung","Schenke deinem Gegenüber drei langsame Küsse.",60,"random",3],
+["Berührung","Massiere die Hände für zwei Minuten.",120,"random",3],
+["Nähe","Kuschelt ganz eng für drei Minuten.",180,"both",3],
+["Wunschkarte","Lass dein Gegenüber einen Kuss auswählen.",90,"random",3],
+["Machtwechsel","Wechselt die Führung beim Küssen.",120,"both",3],
+["Verführung","Schenke deinem Gegenüber vier langsame Küsse.",60,"random",3],
+["Berührung","Massiere die Schultern für zwei Minuten.",120,"random",3],
+["Nähe","Kuschelt ohne zu sprechen für drei Minuten.",180,"both",3],
+["Wunschkarte","Lass dein Gegenüber eine Massage auswählen.",90,"random",3],
+["Machtwechsel","Wechselt die Führung beim Tanzen.",120,"both",3],
+["Verführung","Schenke deinem Gegenüber fünf langsame Küsse.",60,"random",3],
+["Berührung","Massiere den Rücken für zwei Minuten.",120,"random",3],
+["Nähe","Kuschelt mit geschlossenen Augen für drei Minuten.",180,"both",3],
+["Wunschkarte","Lass dein Gegenüber eine Umarmung auswählen.",90,"random",3],
+["Machtwechsel","Wechselt die Führung beim Massieren.",120,"both",3],
+["Verführung","Schenke deinem Gegenüber sechs langsame Küsse.",60,"random",3],
+["Berührung","Massiere die Arme für zwei Minuten.",120,"random",3],
+["Nähe","Kuschelt bei gedämpftem Licht für drei Minuten.",180,"both",3],
+["Wunschkarte","Lass dein Gegenüber einen langsamen Tanz auswählen.",90,"random",3],
+["Machtwechsel","Wechselt die Führung beim Kuscheln.",120,"both",3],
+["Verführung","Schenke deinem Gegenüber sieben langsame Küsse.",60,"random",3],
+["Berührung","Massiere den Nacken für zwei Minuten.",120,"random",3],
+["Nähe","Kuschelt unter einer Decke für drei Minuten.",180,"both",3],
+["Wunschkarte","Lass dein Gegenüber eine Zärtlichkeit auswählen.",90,"random",3],
+["Machtwechsel","Wechselt die Führung beim Flüstern.",120,"both",3],
+["Verführung","Schenke deinem Gegenüber acht langsame Küsse.",60,"random",3],
+["Berührung","Massiere die Handflächen für zwei Minuten.",120,"random",3],
+["Nähe","Kuschelt während leise Musik läuft für drei Minuten.",180,"both",3],
+["Wunschkarte","Lass dein Gegenüber einen gemeinsamen Moment auswählen.",90,"random",3],
+["Machtwechsel","Wechselt die Führung beim Umarmen.",120,"both",3],
+["Joker","Ihr dürft eine neue Karte ziehen.",30,"both",2],
+["Joker","Wählt gemeinsam einen Kuss oder eine Umarmung.",30,"both",2],
+["Joker","Tauscht für die nächste Karte die Rollen.",30,"both",2],
+["Joker","Verdoppelt freiwillig die Zeit der nächsten Karte.",30,"both",2],
+["Joker","Macht eine Pause und entscheidet dann neu.",30,"both",2],
+["Joker","Jeder darf einen Wunsch äußern oder passen.",30,"both",2]
+];const $=x=>document.getElementById(x),KEY='afterdark_v3';let custom=[],settings={mode:'classic',level:3,name1:'Kevin',name2:'Lea',sound:false,special:true,deck:'all',roulette:true,roleWeights:[40,40,20]};try{const x=JSON.parse(localStorage.getItem(KEY)||'{}');if(Array.isArray(x.custom))custom=x.custom.filter(c=>Array.isArray(c)&&c.length>=5);if(x.settings)settings={...settings,...x.settings}}catch{}let drawn=0,current=null,remaining=60,total=60,interval=null,lastIndex=-1,flipTimeout=null;const fmt=s=>String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');function persist(){try{localStorage.setItem(KEY,JSON.stringify({custom,settings}))}catch{}}function notify(s){$('toast').textContent=s}function beep(){if(!settings.sound)return;try{let ctx=new (window.AudioContext||window.webkitAudioContext)(),o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.value=660;g.gain.setValueAtTime(.07,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.2);o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+.21)}catch{}}function stop(){if(interval)clearInterval(interval);interval=null;$('start').textContent='▶ Timer starten'}function update(){ $('clock').textContent=fmt(remaining);$('fill').style.width=(total?remaining/total*100:0)+'%';$('saved').textContent=custom.length+' eigene Karten gespeichert · '+(settings.customOnly===false?base.length+custom.length:custom.length)+' Karten im aktiven Deck';$('status').textContent='✦ '+drawn+' Karten gezogen · '+(settings.customOnly===false?base.length+custom.length:custom.length)+' Karten im Deck ✦'}function targetName(t){if(settings.roulette&&settings.deck==='all'&&t==='random'){const w=Array.isArray(settings.roleWeights)?settings.roleWeights:[40,40,20];const a=Math.max(0,Number(w[0])||0),b=Math.max(0,Number(w[1])||0),c=Math.max(0,Number(w[2])||0);const sum=a+b+c||1;const r=Math.random()*sum;t=r<a?'p1':r<a+b?'p2':'both'}if(t==='both')return 'Gemeinsam';if(t==='p1')return settings.name1||'Spieler 1';if(t==='p2')return settings.name2||'Spieler 2';return Math.random()<.5?(settings.name1||'Spieler 1'):(settings.name2||'Spieler 2')}function level(){return settings.level===4?Math.min(3,1+Math.floor(drawn/4)):settings.level}function draw(){stop();if(flipTimeout)clearTimeout(flipTimeout);let deck=(settings.customOnly===false?base.concat(custom):custom).filter(c=>Number(c[4])<=level()&&(settings.special||!['Joker','Überraschung'].includes(c[0]))&&(settings.deck==='all'||settings.deck==='both'&&c[3]==='both'||settings.deck==='p1'&&['p1','random'].includes(c[3])||settings.deck==='p2'&&['p2','random'].includes(c[3])));if(settings.mode==='mystery'){const surprises=deck.filter(c=>['Joker','Überraschung','Geheimnis'].includes(c[0]));if(surprises.length)deck=surprises}else if(settings.mode==='duel'){const challenges=deck.filter(c=>['Mutprobe','Verführung','Wunschkarte'].includes(c[0]));if(challenges.length)deck=challenges}if(!deck.length){notify('Keine Karten für diese Einstellung.');return}let i=Math.floor(Math.random()*deck.length);if(deck.length>1&&i===lastIndex)i=(i+1)%deck.length;lastIndex=i;current=deck[i];drawn++;remaining=total=Math.max(1,Number(current[2])||60);$('flip').classList.remove('flipped');$('flip').classList.remove('reveal-glow');void $('flip').offsetWidth;$('flip').classList.add('reveal-glow');$('category').textContent=current[0]+' · '+targetName(current[3]);$('challenge').textContent=current[1];$('meta').textContent='✦ '+fmt(total)+' ✦';notify('');$('royal-hint').textContent='✦ ANTIPPEN ZUM AUFDECKEN ✦';update()}function finish(){stop();$('meta').textContent='✦ Zeit abgelaufen! ✦';notify('Zeit abgelaufen – bereit für die nächste Karte?');beep();if(navigator.vibrate)navigator.vibrate([180,120,180])}function tick(){remaining=Math.max(0,Math.ceil((deadline-performance.now())/1000));update();if(remaining<=0)finish()}let deadline=0;$('enter').onclick=()=>{$('intro').classList.add('hidden')};$('draw').onclick=draw;$('skip').onclick=()=>{draw();notify('Karte übersprungen – ohne Begründung ♡')};$('reset').onclick=()=>{stop();remaining=total;update();notify('Timer zurückgesetzt')};$('start').onclick=()=>{if(current&&!$('flip').classList.contains('flipped')){notify('Bitte zuerst die Karte aufdecken.');return}if(interval){remaining=Math.max(0,Math.ceil((deadline-performance.now())/1000));stop();update();return}if(!current){draw();return}if(!remaining)remaining=total;deadline=performance.now()+remaining*1000;$('start').textContent='Ⅱ Pause';interval=setInterval(tick,150);tick()};$('add').onclick=()=>{let s=$('newText').value.trim();if(!s){notify('Bitte zuerst eine Herausforderung eingeben.');return}custom.push([$('newCategory').value,s,Number($('newDuration').value),$('newTarget').value,Number($('newLevel').value)]);$('newText').value='';persist();update();notify('Deine Karte wurde gespeichert ♡');if(window.renderCustomCards)window.renderCustomCards()};$('clear').onclick=()=>{if(!confirm('Alle selbst erstellten Karten endgültig löschen?'))return;custom=[];persist();update();notify('Eigene Karten gelöscht');if(window.renderCustomCards)window.renderCustomCards()};for(const id of ['name1','name2']){$(id).value=settings[id];$(id).addEventListener('input',()=>{settings[id]=$(id).value;persist()})}for(const id of ['sound','special']){$(id).checked=settings[id];$(id).onchange=()=>{settings[id]=$(id).checked;persist()}}function refreshLevels(){document.querySelectorAll('[data-level]').forEach(b=>b.classList.toggle('active',Number(b.dataset.level)===settings.level))}document.querySelectorAll('[data-level]').forEach(b=>b.onclick=()=>{settings.level=Number(b.dataset.level);drawn=0;lastIndex=-1;refreshLevels();persist();notify('Intensität geändert – zieh eine neue Karte')});refreshLevels();update();document.addEventListener('visibilitychange',()=>{if(document.hidden&&interval){remaining=Math.max(0,Math.ceil((deadline-performance.now())/1000));stop();update();notify('Timer pausiert, weil du die App verlassen hast')}});
+function revealRoyal(){if(!current||$('flip').classList.contains('flipped'))return;$('flip').classList.add('flipped');beep()}$('flip').addEventListener('click',revealRoyal);$('flip').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();revealRoyal()}});if('serviceWorker' in navigator && location.protocol!=='file:')navigator.serviceWorker.register('./sw.js').catch(()=>{});</script><style>
+.adtools{max-width:520px;margin:20px auto;padding:18px;border:1px solid #79505b;border-radius:18px;background:#21101c;color:#f6e5df;text-align:left}.adtools h2{font:24px Georgia,serif;color:#e8bc7b}.adtools p{font-size:13px;line-height:1.55;color:#c9b1b8}.adtools select,.adtools input{width:100%;padding:12px;background:#160c13;border:1px solid #79505b;border-radius:9px;color:#fff;font-size:16px;margin:6px 0 12px}.adtools button{margin:4px 4px 4px 0}.adtools .small{font-size:12px;color:#d4b9bf}.adlock{position:fixed;inset:0;background:#120811;z-index:9999;display:flex;align-items:center;justify-content:center;padding:22px}.adlock .adtools{width:min(100%,430px);text-align:center;box-shadow:0 0 50px #000}.adlock[hidden]{display:none}.adlock input{text-align:center;letter-spacing:7px}.adtools .danger{background:#592336}
+</style>
+<style>.mode-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.mode-grid button{padding:12px 5px;font-size:12px}.mode-btn.active{background:linear-gradient(125deg,#d3a36c,#8c4c53);color:#1d0c18}.flip-stage{filter:drop-shadow(0 0 10px #a02d4a44)}.flip-card.reveal-glow .back{animation:cardglow 1.4s ease-out}@keyframes cardglow{0%,100%{box-shadow:0 22px 50px #0009,inset 0 0 0 6px #ffffff08}55%{box-shadow:0 20px 65px #ad3d6a99,0 0 25px #dfae7e55}}@media(prefers-reduced-motion:reduce){.flip-card.reveal-glow .back{animation:none}}</style><section class="adtools" id="ad-v06"><h2>✦ Spielmodus</h2><p>Wählt, wie eure Runde verlaufen soll. Eure Karten und bisherigen Einstellungen bleiben gespeichert.</p><div class="mode-grid"><button type="button" class="mode-btn" data-mode="classic">♡ Klassisch</button><button type="button" class="mode-btn" data-mode="duel">♠ Mutprobe</button><button type="button" class="mode-btn" data-mode="mystery">✧ Geheimnis</button></div><p id="mode-help" class="small"></p><h2>🃏 Überraschung & Joker</h2><p>Ziehe gezielt eine Überraschungskarte oder entscheide euch für einen freiwilligen Joker. Jede Karte darf übersprungen werden.</p><div class="controls"><button id="surprise-draw" class="gold">✧ Überraschung</button><button id="joker-draw">♠ Joker ziehen</button></div><p id="v06-message" class="small" role="status"></p><h2>✦ Spielkomfort</h2><p>Die 3D-Karte hat jetzt einen Lichtschimmer beim Aufdecken. Weniger Animationen? Das respektiert die Bewegungseinstellungen deines Handys.</p><p class="small">AFTER DARK 1.3 · Privat auf diesem Gerät · Einvernehmlichkeit geht immer vor.</p></section><section class="adtools" id="ad-roulette"><h2>♥ Rollen-Roulette · Intimate Edition</h2><p>Bei jeder neuen Karte wird die Rolle ausgelost. Im Einzeldeck bleibt die ausgewählte Person zuständig. Eigene Karten bleiben unverändert gespeichert.</p><label class="roulette-toggle"><input type="checkbox" id="ad-roulette-on"> Zufällige Rollenverteilung einschalten</label><div class="row"><div><label for="ad-weight1">Kevin · Gewicht</label><input id="ad-weight1" type="number" min="0" max="100" value="40"></div><div><label for="ad-weight2">Lea · Gewicht</label><input id="ad-weight2" type="number" min="0" max="100" value="40"></div><div><label for="ad-weight3">Gemeinsam · Gewicht</label><input id="ad-weight3" type="number" min="0" max="100" value="20"></div></div><p class="small" id="ad-role-help">Standard: 40 % / 40 % / 20 %. Jede Karte kann übersprungen werden.</p><button id="ad-role-test" class="gold" type="button">♠ Rolle probeweise auslosen</button><p id="ad-role-result" aria-live="polite" class="small"></p></section><section class="adtools" id="ad-extra"><h2>♠ Eure Kartendecks</h2><p>Wählt, wer die nächste Herausforderung bekommt. Beim Einzeldeck werden auch Zufallskarten dieser Person zugeordnet.</p><select id="ad-deck"><option value="all">Alle Karten · Zufall</option><option value="p1">Nur Kevin · Spieler 1</option><option value="p2">Nur Lea · Spieler 2</option><option value="both">Nur Gemeinsam</option></select><h2>♧ Privat & Sicherung</h2><p>Speichere eure eigenen Karten als Datei auf deinem Handy. Beim Import werden die vorhandenen Karten und Einstellungen ersetzt.</p><button id="ad-export" class="gold">↓ Sicherung exportieren</button><button id="ad-import">↑ Sicherung importieren</button><input id="ad-file" type="file" accept="application/json,.json" hidden><p class="small">Die Sicherung ist unverschlüsselt. Bewahre sie geschützt auf und lade sie nicht auf GitHub hoch.</p><h2>♢ PIN-Schutz</h2><p>Ein optionaler vier- bis achtstelliger PIN verhindert zufälliges Öffnen. Er ist kein Schutz vor technisch versierten Personen und verschlüsselt eure Karten nicht.</p><button id="ad-setpin">PIN einrichten / ändern</button><button id="ad-removepin" class="secondary">PIN deaktivieren</button><p id="ad-msg" role="status" class="small"></p></section>
+<div id="ad-lock" class="adlock" hidden><div class="adtools"><h2>🌹 AFTER DARK</h2><p id="ad-lockmsg">Nur für Kevin & Lea · PIN eingeben</p><input id="ad-pin" type="password" inputmode="numeric" autocomplete="off" maxlength="8" placeholder="••••" aria-label="PIN"><button id="ad-unlock" class="gold">Entsperren</button><p id="ad-lockerr" role="alert"></p></div></div>
+<script>
+(()=>{
+const el=id=>document.getElementById(id), say=t=>el('ad-msg').textContent=t;
+const deck=el('ad-deck');deck.value=settings.deck||'all';deck.addEventListener('change',()=>{settings.deck=deck.value;persist();say('Deck ausgewählt. Zieh eine neue Karte.')});
+el('ad-export').onclick=()=>{const data={app:'AFTER DARK',version:6,custom,settings,exported:new Date().toISOString()};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='after-dark-sicherung.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);say('Sicherung erstellt. Bewahre sie privat auf.')};
+el('ad-import').onclick=()=>el('ad-file').click();el('ad-file').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>2000000)throw Error('Datei zu groß');const data=JSON.parse(await f.text());if(data.app!=='AFTER DARK'||!Array.isArray(data.custom)||!data.custom.every(c=>Array.isArray(c)&&c.length>=5&&typeof c[1]==='string')||!data.settings||typeof data.settings!=='object')throw Error('Ungültige Sicherungsdatei');if(!confirm('Alle derzeitigen eigenen Karten und Einstellungen durch die Sicherung ersetzen?'))return;custom=data.custom;settings={...settings,...data.settings};persist();say('Sicherung importiert. App wird neu geladen.');location.reload()}catch(err){say('Import fehlgeschlagen: '+err.message)}finally{e.target.value=''}};
+const PINKEY='afterdark_pin_v05';let stored=localStorage.getItem(PINKEY);const lock=el('ad-lock');
+const digest=async pin=>{const bytes=new TextEncoder().encode('AFTER-DARK-v05-local:'+pin);const hash=await crypto.subtle.digest('SHA-256',bytes);return Array.from(new Uint8Array(hash)).map(x=>x.toString(16).padStart(2,'0')).join('')};
+function showLock(){lock.hidden=false;el('ad-pin').value='';el('ad-pin').focus()}if(stored)showLock();
+el('ad-unlock').onclick=async()=>{const pin=el('ad-pin').value;if(await digest(pin)===stored){lock.hidden=true;el('ad-lockerr').textContent=''}else el('ad-lockerr').textContent='PIN falsch. Bitte erneut versuchen.'};el('ad-pin').addEventListener('keydown',e=>{if(e.key==='Enter')el('ad-unlock').click()});
+el('ad-setpin').onclick=async()=>{if(stored){const old=prompt('Aktuellen PIN eingeben:');if(old===null)return;if(await digest(old)!==stored){say('Aktueller PIN falsch.');return}}const pin=prompt('Neuen PIN (4–8 Ziffern) eingeben:');if(pin===null)return;if(!/^\d{4,8}$/.test(pin)){say('Bitte 4 bis 8 Ziffern verwenden.');return}const again=prompt('PIN wiederholen:');if(pin!==again){say('PINs stimmen nicht überein.');return}stored=await digest(pin);localStorage.setItem(PINKEY,stored);say('PIN aktiviert. Beim nächsten Öffnen wird er abgefragt.')};
+el('ad-removepin').onclick=async()=>{if(!stored){say('Kein PIN aktiv.');return}const old=prompt('PIN zum Deaktivieren eingeben:');if(old===null)return;if(await digest(old)!==stored){say('PIN falsch.');return}localStorage.removeItem(PINKEY);stored=null;say('PIN deaktiviert.')};
+})();
+</script><script>(()=>{const modes={classic:'Alle passenden Karten werden gemischt.',duel:'Fokus auf Mutproben, Verführung und Wünsche.',mystery:'Fokus auf Geheimnisse, Joker und Überraschungen.'};const help=document.getElementById('mode-help');function refreshMode(){document.querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===(settings.mode||'classic')));help.textContent=modes[settings.mode]||modes.classic}document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>{settings.mode=b.dataset.mode;persist();refreshMode();document.getElementById('v06-message').textContent='Spielmodus geändert – bereit für die nächste Karte.'}));refreshMode();function specialDraw(types){const old=settings.mode;settings.mode='classic';const eligible=(settings.customOnly===false?base.concat(custom):custom).filter(c=>types.includes(c[0])&&Number(c[4])<=level()&&(settings.deck==='all'||settings.deck==='both'&&c[3]==='both'||settings.deck==='p1'&&['p1','random'].includes(c[3])||settings.deck==='p2'&&['p2','random'].includes(c[3])));settings.mode=old;if(!eligible.length){document.getElementById('v06-message').textContent='Für dieses Deck gibt es hier noch keine passende Karte.';return}stop();if(flipTimeout)clearTimeout(flipTimeout);current=eligible[Math.floor(Math.random()*eligible.length)];drawn++;remaining=total=Math.max(1,Number(current[2])||60);document.getElementById('flip').classList.remove('flipped');document.getElementById('category').textContent=current[0]+' · '+targetName(current[3]);document.getElementById('challenge').textContent=current[1];document.getElementById('meta').textContent='✦ '+fmt(total)+' ✦';document.getElementById('royal-hint').textContent='✦ ANTIPPEN ZUM AUFDECKEN ✦';update();document.getElementById('v06-message').textContent='Eure Spezialkarte ist gezogen.'}document.getElementById('surprise-draw').onclick=()=>specialDraw(['Überraschung','Geheimnis']);document.getElementById('joker-draw').onclick=()=>specialDraw(['Joker']);})();</script><script>(()=>{const on=document.getElementById('ad-roulette-on'),ids=['ad-weight1','ad-weight2','ad-weight3'],help=document.getElementById('ad-role-help');on.checked=settings.roulette!==false;const weights=Array.isArray(settings.roleWeights)?settings.roleWeights:[40,40,20];ids.forEach((id,i)=>{const el=document.getElementById(id);el.value=weights[i]??[40,40,20][i];el.addEventListener('change',save)});on.addEventListener('change',save);function save(){const v=ids.map(id=>Math.max(0,Math.min(100,Number(document.getElementById(id).value)||0)));if(v.every(x=>x===0)){help.textContent='Bitte mindestens ein Gewicht größer als 0 wählen.';return}settings.roleWeights=v;settings.roulette=on.checked;persist();const sum=v.reduce((a,b)=>a+b,0);help.textContent='Verteilung: '+v.map(x=>Math.round(x/sum*100)+' %').join(' / ')+' · Jede Karte darf übersprungen werden.'}document.getElementById('ad-role-test').addEventListener('click',()=>{const w=settings.roleWeights||[40,40,20],sum=w.reduce((a,b)=>a+Number(b),0)||1,r=Math.random()*sum;const who=r<w[0]?settings.name1:r<Number(w[0])+Number(w[1])?settings.name2:'Gemeinsam';document.getElementById('ad-role-result').textContent='Nächste Rolle: '+who+' ♡ (nur Test, keine Karte gezogen)'});save()})();</script>
+<style>
+.custom-manager{max-width:520px;margin:22px auto;padding:20px 18px;border:1px solid #8e624f;border-radius:20px;background:linear-gradient(145deg,#321321,#1c0c17);color:#f7e5de}
+.custom-manager h2{margin:0 0 12px}.custom-manager p{line-height:1.55}.custom-manager .card-entry{border:1px solid #76505c;border-radius:13px;padding:13px;margin:10px 0;background:#210e19}
+.custom-manager .card-entry strong{display:block;color:#e8bc7b;margin-bottom:7px}.custom-manager .card-entry p{overflow-wrap:anywhere;white-space:pre-wrap;margin:6px 0 12px}
+.custom-manager .card-entry .actions{display:flex;gap:8px;flex-wrap:wrap}.custom-manager .card-entry button{font-size:12px;padding:10px}
+.custom-manager .toolbar{display:grid;grid-template-columns:1fr 1fr;gap:9px}.custom-manager .muted{color:#d4b3bd;font-size:12px}
+#edit-panel[hidden]{display:none}#edit-panel{border:1px solid #b88756;border-radius:14px;padding:14px;margin-top:15px}
+</style>
+<section class="custom-manager" id="custom-manager"><h2>🌹 Meine Karten · Private Edition</h2>
+<p class="small">Deine persönlichen Karten bleiben auf diesem Gerät gespeichert. Du kannst sie hier jederzeit bearbeiten, kopieren und einzeln entfernen.</p>
+<label class="inline"><input type="checkbox" id="custom-only" checked> <strong>Nur meine eigenen Karten spielen</strong></label>
+<p class="muted">Wenn aktiviert, werden die bisherigen Standardkarten nicht gezogen. Du kannst sie jederzeit wieder einschalten.</p>
+<div class="toolbar"><button class="gold" type="button" id="new-card-jump">＋ Neue Karte</button><button class="secondary" type="button" id="custom-sort-toggle">↕ Reihenfolge umkehren</button></div>
+<label for="custom-search">Karten durchsuchen</label><input id="custom-search" placeholder="Nach Text oder Kategorie suchen …" autocomplete="off">
+<p id="custom-count" class="muted" aria-live="polite"></p><div id="custom-list"></div>
+<div id="edit-panel" hidden><h2>Karte bearbeiten</h2><label for="edit-text">Aufgabe</label><textarea id="edit-text" maxlength="350"></textarea>
+<div class="row"><div><label for="edit-target">Für wen?</label><select id="edit-target"><option value="random">Zufällig</option><option value="both">Gemeinsam</option><option value="p1">Spieler 1</option><option value="p2">Spieler 2</option></select></div>
+<div><label for="edit-duration">Dauer in Sekunden</label><input id="edit-duration" type="number" min="1" max="3600" step="1"></div></div>
+<div class="row"><div><label for="edit-category">Kartentyp</label><input id="edit-category" maxlength="40"></div><div><label for="edit-level">Intensität</label><select id="edit-level"><option value="1">Hot</option><option value="2">Very Hot</option><option value="3">Extreme</option></select></div></div>
+<div class="toolbar" style="margin-top:14px"><button class="gold" id="edit-save" type="button">Änderungen speichern</button><button class="secondary" id="edit-cancel" type="button">Abbrechen</button></div></div>
+<p class="muted">Tipp: Vor einem Update unter „Privat & Sicherung“ eine Sicherungsdatei exportieren. Lösche keine Browserdaten, wenn du deine Karten behalten möchtest.</p></section>
+<script>
+(()=>{
+const get=id=>document.getElementById(id), list=get('custom-list'), search=get('custom-search');let editing=-1,reversed=false;
+const toggle=get('custom-only');toggle.checked=settings.customOnly!==false;
+if(settings.customOnly===undefined){settings.customOnly=true;persist()}
+toggle.addEventListener('change',()=>{settings.customOnly=toggle.checked;persist();update();notify('Kartenauswahl gespeichert. Zieh eine neue Karte.')});
+get('new-card-jump').onclick=()=>{get('newText').scrollIntoView({behavior:'smooth',block:'center'});get('newText').focus()};
+get('custom-sort-toggle').onclick=()=>{reversed=!reversed;render()};
+search.addEventListener('input',render);
+const targetLabel=t=>({random:'Zufällig',both:'Gemeinsam',p1:settings.name1||'Spieler 1',p2:settings.name2||'Spieler 2'})[t]||t;
+function render(){list.replaceChildren();const q=search.value.trim().toLocaleLowerCase('de');let indices=custom.map((_,i)=>i).filter(i=>String(custom[i][0]+' '+custom[i][1]).toLocaleLowerCase('de').includes(q));if(reversed)indices.reverse();get('custom-count').textContent=indices.length+' von '+custom.length+' eigenen Karten';if(!indices.length){const p=document.createElement('p');p.className='muted';p.textContent=custom.length?'Keine passenden Karten gefunden.':'Noch keine eigenen Karten vorhanden. Erstelle deine erste Karte im Editor oben.';list.append(p)}
+for(const i of indices){const c=custom[i],item=document.createElement('div');item.className='card-entry';const head=document.createElement('strong');head.textContent=(i+1)+'. '+c[0]+' · '+targetLabel(c[3]);const body=document.createElement('p');body.textContent=c[1];const info=document.createElement('div');info.className='muted';info.textContent=fmt(Number(c[2])||60)+' · Intensität '+c[4];const actions=document.createElement('div');actions.className='actions';for(const [name,fn,cls] of [['✎ Bearbeiten',()=>edit(i),'gold'],['⧉ Duplizieren',()=>{custom.push([...custom[i]]);persist();update();render();notify('Karte dupliziert ♡')},'secondary'],['✕ Löschen',()=>{if(!confirm('Diese Karte wirklich löschen?'))return;custom.splice(i,1);persist();update();render();notify('Karte gelöscht')},'secondary']]){const b=document.createElement('button');b.type='button';b.textContent=name;b.className=cls;b.onclick=fn;actions.append(b)}item.append(head,body,info,actions);list.append(item)}}
+function edit(i){editing=i;const c=custom[i];get('edit-text').value=c[1];get('edit-target').value=c[3];get('edit-duration').value=c[2];get('edit-category').value=c[0];get('edit-level').value=c[4];get('edit-panel').hidden=false;get('edit-panel').scrollIntoView({behavior:'smooth',block:'center'})}
+get('edit-cancel').onclick=()=>{editing=-1;get('edit-panel').hidden=true};
+get('edit-save').onclick=()=>{if(editing<0||!custom[editing])return;const text=get('edit-text').value.trim(),cat=get('edit-category').value.trim(),seconds=Number(get('edit-duration').value);if(!text||!cat||!Number.isInteger(seconds)||seconds<1||seconds>3600){notify('Bitte Text, Kategorie und eine Dauer von 1 bis 3600 Sekunden angeben.');return}custom[editing]=[cat,text,seconds,get('edit-target').value,Number(get('edit-level').value)];persist();update();get('edit-panel').hidden=true;editing=-1;render();notify('Änderungen gespeichert ♡')};
+window.renderCustomCards=render;render();
+})();
+</script>
+</body></html>
